@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL"
+			readonly="true" class="readonly" />
+
+		<field name="name" type="text" label="COM_DJLEAGUE_NAME" required="true" />
+		
+		<field name="alias" type="text" label="JFIELD_ALIAS_LABEL" description="JFIELD_ALIAS_DESC" class="inputbox" size="30" />
+		
+		<field name="logo" type="media" default="" label="COM_DJLEAGUE_LOGO" />
+		
+		<field name="city" type="text" label="COM_DJLEAGUE_TEAM_CITY" />
+			
+		<field name="venue" type="text" label="COM_DJLEAGUE_TEAM_VENUE" />
+		
+		<field name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
+			description="JGLOBAL_FIELD_CREATED_DESC" class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="created_by" type="user" label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+			description="JGLOBAL_FIELD_CREATED_BY_Desc" />
+
+	</fieldset>
+
+	<fields name="params">
+		<fieldset name="team_params" label="COM_DJLEAGUE_TEAM_PARAMS">
+			
+		</fieldset>
+	</fields>
+</form>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<fieldset name="global" label="COM_DJLEAGUE_CONFIG_GLOBAL_SETTINGS" addfieldpath="/administrator/components/com_djleague/models/fields">
+
+	    <field name="theme" type="djleaguetheme" default="bootstrap" label="COM_DJLEAGUE_CONFIG_THEME" description="COM_DJLEAGUE_CONFIG_THEME_DESC" />
+	    
+	    <field type="djspacer" label="COM_DJLEAGUE_CONFIG_SCHEDULE_VIEW_SETTINGS" />
+	    
+	    <field name="schedule_limit" type="text" class="input-mini" default="20" label="COM_DJLEAGUE_CONFIG_SCHEDULE_LIMIT" />
+		
+		<field name="schedule_ajax" type="radio" class="btn-group" default="0" label="COM_DJLEAGUE_CONFIG_SCHEDULE_AJAX_PAGINATION">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="schedule_order" type="list" default="a.date" label="COM_DJLEAGUE_CONFIG_SCHEDULE_ORDERING">
+			<option value="a.date">COM_DJLEAGUE_CONFIG_ORDERING_DATE</option>
+			<option value="a.round">COM_DJLEAGUE_CONFIG_ORDERING_ROUND</option>
+		</field>
+		<field name="schedule_order_dir" type="list" default="asc" label="COM_DJLEAGUE_CONFIG_SCHEDULE_ORDER_DIR">
+			<option value="asc">COM_DJLEAGUE_CONFIG_ORDERING_ASC</option>
+			<option value="desc">COM_DJLEAGUE_CONFIG_ORDERING_DESC</option>
+		</field>
+		
+		<field name="schedule_show_order_dir" type="radio" class="btn-group" default="1" label="COM_DJLEAGUE_CONFIG_SCHEDULE_SHOW_ORDER_DIR">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+		<field name="schedule_show_logo" type="radio" class="btn-group" default="1" label="COM_DJLEAGUE_CONFIG_SCHEDULE_SHOW_TEAM_LOGO">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		
+	    
+	    <field type="djspacer" label="COM_DJLEAGUE_CONFIG_SCORE_TABLES_VIEW_SETTINGS" />
+	    
+	    <field name="show_logo" type="radio" class="btn-group" default="1" label="COM_DJLEAGUE_CONFIG_TABLE_SHOW_TEAM_LOGO">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+	    
+	    <field name="table_cols" type="djleaguesortablecheckboxes" label="COM_DJLEAGUE_CONFIG_TABLE_COLUMNS" class="well " description="COM_DJLEAGUE_CONFIG_TABLE_COLUMNS_DESC">
+	    	<option value="played" selected="true">COM_DJLEAGUE_PLAYED</option>
+	    	<option value="points" selected="true">COM_DJLEAGUE_POINTS</option>
+	    	<option value="won" selected="true">COM_DJLEAGUE_WON</option>
+	    	<option value="drawn" selected="true">COM_DJLEAGUE_DRAWN</option>
+	    	<option value="lost" selected="true">COM_DJLEAGUE_LOST</option>
+	    	<option value="score_for" selected="true">COM_DJLEAGUE_SCORE_FOR</option>
+	    	<option value="score_against" selected="true">COM_DJLEAGUE_SCORE_AGAINST</option>
+	    	<option value="score_diff" selected="true">COM_DJLEAGUE_SCORE_DIFFERENCE</option>
+	    </field>
+	    
+	    <field name="pos_criteria" type="djleaguesortablecheckboxes" label="COM_DJLEAGUE_CONFIG_POSITIONING_CRITERIA" class="well " description="COM_DJLEAGUE_CONFIG_POSITIONING_CRITERIA_DESC">
+	    	<option value="points" selected="true" readonly="true">COM_DJLEAGUE_POINTS</option>
+	    	<option value="score_diff" selected="true">COM_DJLEAGUE_SCORE_DIFFERENCE</option>
+	    	<option value="played">COM_DJLEAGUE_PLAYED</option>
+	    	<option value="won">COM_DJLEAGUE_WON</option>
+	    	<option value="drawn">COM_DJLEAGUE_DRAWN</option>
+	    	<option value="lost">COM_DJLEAGUE_LOST</option>
+	    	<option value="score_for">COM_DJLEAGUE_SCORE_FOR</option>
+	    	<option value="score_against">COM_DJLEAGUE_SCORE_AGAINST</option>
+	    </field>
+	    
+	</fieldset>
+	
+    <fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">
+		
+		<field name="rules" type="rules"
+			component="com_djleague"
+			filter="rules"
+			validate="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			section="component" />
+	</fieldset>
+</config>

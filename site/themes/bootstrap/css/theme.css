@@ -1,0 +1,344 @@
+/**
+	GENERAL
+*/
+.djl_clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.djl_clearfix {
+	min-width: 0;
+	display: inline-block; /* \*/
+	display: block;
+} /* trigger hasLayout for IE7. Hide from IE Mac */
+* html .djl_clearfix {
+	height: 1%;
+} /* Hide from IE Mac */
+
+/* GAMES SCHEDULE VIEW */
+.djl_theme_bootstrap.djl_schedule table td {
+	font-size: 18px;
+	line-height: 48px;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.game_day {
+	background: #f5f5f5;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.game_day,.djl_theme_bootstrap.djl_schedule table td.time
+	{
+	padding-left: 20px;
+	color: #999;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.team_home {
+	text-align: right;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.team_home img {
+	float: right;
+	margin-left: 12px;
+	max-width: 48px;
+	max-height: 48px;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.team_away {
+	text-align: left;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.team_away img {
+	float: left;
+	margin-right: 12px;
+	max-width: 48px;
+	max-height: 48px;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.score {
+	text-align: center;
+	font-weight: 600;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.score .desc {
+	font-size: 16px;
+	font-weight: 400;
+	color: #999;
+}
+
+.djl_theme_bootstrap.djl_schedule table td.venue {
+	color: #999;
+}
+
+/* SCORE TABLES VIEW */
+.djl_theme_bootstrap.djl_tables table td .team_logo {
+	margin: -4px 8px -4px 0;
+	max-width: 24px;
+	max-height: 24px;
+}
+
+.djl_theme_bootstrap.djl_tables table td.points {
+	font-weight: 600;
+}
+.djl_theme_bootstrap.djl_tables table td.played,
+.djl_theme_bootstrap.djl_tables table td.won,
+.djl_theme_bootstrap.djl_tables table td.drawn,
+.djl_theme_bootstrap.djl_tables table td.lost,
+.djl_theme_bootstrap.djl_tables table td.score_for,
+.djl_theme_bootstrap.djl_tables table td.score_against,
+.djl_theme_bootstrap.djl_tables table td.score_diff {}
+
+/* SCORE TABLES MODULE */
+.djl_theme_bootstrap.mod_djl_tables table tr.highlight_team td {
+	background: #eee;
+	color: #000;
+}
+
+.djl_theme_bootstrap.mod_djl_tables table td .team_logo {
+	margin: -4px 8px -4px 0;
+	max-width: 24px;
+	max-height: 24px;
+}
+
+.djl_theme_bootstrap.mod_djl_tables table td.points {
+	font-weight: 600;
+}
+
+.djl_theme_bootstrap.mod_djl_tables table td.tables_link {
+	text-align: right;
+}
+
+/* GAMES SCHEDULE MODULE - DEFAULT LAYOUT */
+.djl_theme_bootstrap.mod_djl_schedule table td.game_day {
+	color: #999;
+	background: #eee;
+	text-align: center;
+}
+
+.djl_theme_bootstrap.mod_djl_schedule table td {
+	font-size: 12px;
+	line-height: 24px;
+}
+
+.djl_theme_bootstrap.mod_djl_schedule table td.team_home {
+	text-align: right;
+	width: 45%;
+}
+
+.djl_theme_bootstrap.mod_djl_schedule table td.team_home img {
+	float: right;
+	margin-left: 12px;
+	max-width: 24px;
+	max-height: 24px;
+}
+
+.djl_theme_bootstrap.mod_djl_schedule table td.team_away {
+	text-align: left;
+	width: 45%;
+}
+
+.djl_theme_bootstrap.mod_djl_schedule table td.team_away img {
+	float: left;
+	margin-right: 12px;
+	max-width: 24px;
+	max-height: 24px;
+}
+
+.djl_theme_bootstrap.mod_djl_schedule table td.vs_score {
+	text-align: center;
+	font-weight: 600;
+}
+
+.djl_theme_bootstrap.mod_djl_schedule table td.time_venue {
+	text-align: center;
+	color: #999;
+}
+
+.djl_theme_bootstrap.mod_djl_schedule table td.schedule_link {
+	text-align: right;
+}
+
+/* SCHEDULE MODULE - COUNTER LAYOUT */
+.djl_theme_bootstrap.mod_djl_counter {
+	text-align: center
+}
+
+.djl_theme_bootstrap.mod_djl_counter .dj-date-counter {
+	font-size: 36px;
+	font-weight: 900;
+	line-height: 48px;
+	margin: 15px 0 24px
+}
+
+.djl_theme_bootstrap.mod_djl_counter .dj-date-counter>span {
+	position: relative;
+	z-index: 1;
+	display: inline-block
+}
+
+.djl_theme_bootstrap.mod_djl_counter .dj-date-counter>span:before {
+	content: '';
+	position: absolute;
+	border-bottom: 1px solid #f5f5f5;
+	width: 66px;
+	left: 0;
+	top: 24px;
+	z-index: 5
+}
+
+.djl_theme_bootstrap.mod_djl_counter .dj-date-counter>span:after {
+	content: ':';
+	color: #ddd;
+	margin-left: 3px;
+	margin-right: -5px;
+	float: right
+}
+
+.djl_theme_bootstrap.mod_djl_counter .dj-date-counter>span:last-child:after
+	{
+	content: none
+}
+
+.djl_theme_bootstrap.mod_djl_counter .dj-date-counter span span {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	width: 60px;
+	z-index: 0;
+	background: #ddd;
+	letter-spacing: 4px
+}
+
+.djl_theme_bootstrap.mod_djl_counter .dj-date-counter span span:before {
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 50px;
+	left: 28px;
+	top: 0px;
+	background: #f5f5f5;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .game {
+	font-size: 16px;
+	text-transform: uppercase;
+	margin: 20px 0;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .game .team_home {
+	float: left;
+	width: 40%;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .game .team_away {
+	float: left;
+	width: 40%;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .game .team_logo {
+	max-width: 48px;
+	max-height: 48px;
+	margin-bottom: 20px;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .game .name {
+	display: block;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .game .vs_score {
+	font-size: 20px;
+	font-weight: 600;
+	float: left;
+	width: 20%;
+	white-space: nowrap;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .game .vs_sign {
+	color: #999;
+}
+
+.djl_theme_bootstrap.mod_djl_counter.show_logo .game .vs_score {
+	line-height: 48px;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .time_venue {
+	color: #999;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+
+.djl_theme_bootstrap.mod_djl_counter .schedule_link {
+	text-align: right;
+}
+
+/* utility classes */
+.djl_spin {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+/* RESPONSIVE STYLES */
+@media ( max-width : 979px) {
+	.djl_theme_bootstrap.djl_schedule table td {
+		font-size: 12px;
+		line-height: 24px;
+	}
+	.djl_theme_bootstrap.djl_schedule table td img.team_logo {
+		max-width: 24px;
+		max-height: 24px;
+	}
+}
+
+@media ( min-width : 768px) {
+	.djl_theme_bootstrap.djl_schedule table tr.mobile_info {
+		display: none !important;
+	}
+	.djl_theme_bootstrap.djl_tables table .short_title {
+		display: none;
+	}
+}
+
+@media ( max-width : 767px) {
+	.djl_theme_bootstrap.djl_schedule table tr.mobile_info td.time {
+		text-align: right;
+	}
+	.djl_theme_bootstrap.djl_tables table .long_title {
+		display: none;
+	}
+}
+
+@media ( max-width : 480px) {
+	.djl_theme_bootstrap.djl_schedule table td img.team_logo {
+		display: none;
+	}
+	.djl_theme_bootstrap.djl_tables table td .team_logo {
+		display: none;
+	}
+	.djl_theme_bootstrap.djl_tables table th.won_th,
+	.djl_theme_bootstrap.djl_tables table th.drawn_th,
+	.djl_theme_bootstrap.djl_tables table th.lost_th,
+	.djl_theme_bootstrap.djl_tables table th.score_for_th,
+	.djl_theme_bootstrap.djl_tables table th.score_against_th,
+	.djl_theme_bootstrap.djl_tables table td.won,
+	.djl_theme_bootstrap.djl_tables table td.drawn,
+	.djl_theme_bootstrap.djl_tables table td.lost,
+	.djl_theme_bootstrap.djl_tables table td.score_for,
+	.djl_theme_bootstrap.djl_tables table td.score_against {
+		display: none;
+	}
+}

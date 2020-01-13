@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL"
+			readonly="true" class="readonly" />
+
+		<field name="league_id" type="djleagueleague" label="COM_DJLEAGUE_LEAGUE" required="true" readonly="true" />
+		
+		<field name="round" type="text" label="COM_DJLEAGUE_ROUND" required="true" class="input-mini" filter="intval" />
+		
+		<field name="team_home" type="djleagueteam" label="COM_DJLEAGUE_TEAM_HOME" 
+			required="true" readonly="true" class="input-xlarge" />
+		
+		<field name="team_away" type="djleagueteam" label="COM_DJLEAGUE_TEAM_AWAY" 
+			required="true" readonly="true" class="input-xlarge" />
+		
+		<field name="date" type="calendar" maxlength="16"
+			label="COM_DJLEAGUE_GAME_DATE"
+			class="input-medium" size="16" format="%Y-%m-%d %H:%M"
+			filter="user_utc" default="" required="true" />
+		
+		<field name="city" type="text" label="COM_DJLEAGUE_GAME_CITY" />
+		
+		<field name="venue" type="text" label="COM_DJLEAGUE_GAME_VENUE" />
+		
+		<field name="score_home" type="text" label="COM_DJLEAGUE_SCORE_HOME" class="input-mini" filter="intval" />
+		
+		<field name="score_away" type="text" label="COM_DJLEAGUE_SCORE_AWAY" class="input-mini" filter="intval" />
+		
+		<field name="score_desc" type="text" label="COM_DJLEAGUE_SCORE_DESC" hint="COM_DJLEAGUE_SCORE_DESC_HINT" />
+		
+		<field name="winner" type="list" label="COM_DJLEAGUE_WINNER" default="0">
+			<option value="0">COM_DJLEAGUE_TIE</option>
+			<option value="1">COM_DJLEAGUE_TEAM_HOME</option>
+			<option value="2">COM_DJLEAGUE_TEAM_AWAY</option>
+		</field>
+		
+		<field name="points_home" type="text" label="COM_DJLEAGUE_POINTS_HOME" class="input-mini" filter="intval" />
+		
+		<field name="points_away" type="text" label="COM_DJLEAGUE_POINTS_AWAY" class="input-mini" filter="intval" />
+		
+		<field name="status" type="list" label="COM_DJLEAGUE_STATUS" default="-1">
+			<option value="-1">COM_DJLEAGUE_STATUS_SETUP_NEEDED</option>
+			<option value="0">COM_DJLEAGUE_STATUS_UNPLAYED</option>
+			<option value="1">COM_DJLEAGUE_STATUS_PLAYED</option>
+		</field>
+		
+		<field name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
+			description="JGLOBAL_FIELD_CREATED_DESC" class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="created_by" type="user" label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+			description="JGLOBAL_FIELD_CREATED_BY_Desc" />
+
+	</fieldset>
+
+	<fields name="params">
+		<fieldset name="league_params" label="COM_DJLEAGUE_LEAGUE_PARAMS">
+			
+			
+			
+		</fieldset>
+	</fields>
+</form>

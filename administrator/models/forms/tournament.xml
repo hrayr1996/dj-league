@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL"
+			readonly="true" class="readonly" />
+
+		<field name="name" type="text" label="COM_DJLEAGUE_NAME" required="true" />
+		
+		<field name="alias" type="text" label="JFIELD_ALIAS_LABEL" description="JFIELD_ALIAS_DESC" class="inputbox" size="30" />
+		
+		<field name="description" type="editor" class="inputbox" height="350"
+			label="COM_DJLEAGUE_DESCRIPTION" filter="JComponentHelper::filterText" buttons="true" hide="readmore,pagebreak" />
+		
+		<field name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
+			description="JGLOBAL_FIELD_CREATED_DESC" class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+		<field name="created_by" type="user" label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+			description="JGLOBAL_FIELD_CREATED_BY_Desc" />
+
+	</fieldset>
+
+	<fields name="params">
+		<fieldset name="league_params" label="COM_DJLEAGUE_LEAGUE_PARAMS">
+			
+			<field name="rounds" type="list" default="2" label="COM_DJLEAGUE_ROUND_ROBIN_ROUNDS" description="COM_DJLEAGUE_ROUND_ROBIN_ROUNDS_DESC">
+				<option value="0">COM_DJLEAGUE_ROUND_ROBIN_NONE</option>
+				<option value="1">COM_DJLEAGUE_ROUND_ROBIN_1</option>
+				<option value="2">COM_DJLEAGUE_ROUND_ROBIN_2</option>
+				<option value="3">COM_DJLEAGUE_ROUND_ROBIN_3</option>
+				<option value="4">COM_DJLEAGUE_ROUND_ROBIN_4</option>
+				<option value="5">COM_DJLEAGUE_ROUND_ROBIN_5</option>
+				<option value="6">COM_DJLEAGUE_ROUND_ROBIN_6</option>
+			</field>
+			
+			<field name="win" type="text" label="COM_DJLEAGUE_WIN_POINTS" default="3" required="true" />
+			<field name="lose" type="text" label="COM_DJLEAGUE_LOSE_POINTS" default="0" required="true" />
+			<field name="tie" type="text" label="COM_DJLEAGUE_TIE_POINTS" default="1" required="true" />
+			
+		</fieldset>
+	</fields>
+</form>

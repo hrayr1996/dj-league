@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_DJLEAGUE_TABLES_VIEW">
+	</layout>
+	<fields name="request">
+		<fieldset name="request" addfieldpath="/administrator/components/com_djleague/models/fields">
+			<field name="id" type="djleaguetournament" label="COM_DJLEAGUE_TOURNAMENT" required="true"
+				class="input-xlarge" />
+			<field name="sid" type="djleagueseason" label="COM_DJLEAGUE_SEASON" required="true"
+				class="input-xlarge" />
+		</fieldset>
+	</fields>
+</metadata>

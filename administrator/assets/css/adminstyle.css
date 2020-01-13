@@ -1,0 +1,314 @@
+/**
+* Joomla! 3 styling
+*/
+.home_team_th,
+.home_team {
+	text-align: right !important;
+}
+
+img.team_logo {
+	height: 24px;
+	margin: -4px 6px;
+}
+
+
+.event_cat_icon {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.djvideo_preview {
+	margin: 10px 0 0;
+}
+.djvideo_preview img {
+	margin: 0 0 0 10px;
+	vertical-align: top;
+}
+.djev-ajax-loader {
+	display: inline-block;
+	background: url(../images/ajax-loader.gif);
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+span.djinlineinfo {
+	display: inline-block;
+	color: #aaa;
+	font-weight: bold;
+	margin: 0 10px;
+	padding: 3px;
+	vertical-align: top;
+}
+
+
+.djsep {
+	display: inline-block;
+	border-top: 1px solid #ccc;
+	width: 100%;
+	margin-top: 10px;
+}
+.djtitle {
+	display: inline-block;
+	background: #f7f7f7;
+	color: #2678CD;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	min-width: 420px;
+	margin: 5px 0;
+}
+.djinfo {
+	display: inline-block;
+	background: #C3D2E5;
+	color: #0055BB;
+	border: 1px solid #84A7DB;
+	width: 98%;
+	margin: 5px 0;
+}
+.djnotice {
+	display: inline-block;
+	background: #fcc;
+	color: #c00;
+	border: 1px solid #c00;
+	width: 98%;
+	margin: 5px 0;
+}
+.djtitle label,
+.djinfo label,
+.djnotice label {
+	width: auto;
+	text-align: left;
+	padding: 5px 10px;
+	
+}
+
+.form-inline .checkbox {
+	padding-right: 5px;
+}
+
+/**
+ * Misc
+ */
+ 
+table.table td.order .input-mini {
+	width: 30px;
+}
+ 
+/**
+* CPanel
+*/
+.djc_control_panel {
+	background: #ffffff;
+}
+
+.djc_control_panel .cpanel-left {
+	width: auto;
+	float: left;
+}
+
+.djc_control_panel .cpanel-right {
+	width: 310px; 
+	float: right;
+}
+
+.djc_control_panel div.icon {
+    text-align: center;
+    margin: 0 10px 10px 0;
+	width: 108px;
+	height: 100px;
+	float: left;
+}
+
+.djc_control_panel div.icon a {
+	background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    color: #565656;
+    display: block;
+    float: left;
+    height: 97px;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 108px;
+}
+.djc_control_panel div.icon img {
+	margin: 0 auto;
+    padding: 10px 0;
+}
+
+.djc_control_panel div.icon span {
+	display: block;
+    text-align: center;
+}
+
+/*
+ * Licence Manager
+ */
+.djlic_box{
+	width: 300px;
+	margin: 20px 30px 20px 0 ;
+	padding-top:165px;
+	background: #f4f4f4 url(../images/lic_icon.png) center 30px no-repeat;
+}
+.cpanel .djlic_box .djlic_title{
+	text-align: center;
+	font-size: 24px;
+	color:#444444;
+	margin-bottom:7px;
+}
+.cpanel .djlic_box .djlic_separator{
+	height:1px;
+	margin:15px 0;
+	background: url(../images/lic_line.gif) center no-repeat;
+	width:100%;
+	float:left;
+}
+.cpanel .djlic_box .djlic_line{
+	font-size: 12px;
+	text-transform: uppercase;
+	color:#7e7e7e;	
+	line-height: 26px;
+	text-align: right;
+}
+.cpanel .djlic_box .djlic_line.djll4{
+	text-align: center;
+}
+.cpanel .djlic_box .djlic_line.djll4 a{
+	color:#387ba5;
+	font-size: 15px;
+	text-decoration: none;
+	font-weight: bold;
+}
+.cpanel .djlic_box .djlic_line.djll4.update a{
+	color:#ed1c24;
+}
+.cpanel .djlic_box .djlic_line span{
+	display: inline;
+	color:#444444;
+	font-weight: bold;
+	width:45%;
+	text-align: left;
+	margin-left:5%;
+	display: inline-block;
+	float:right;
+}
+.cpanel .djlic_box .djlic_line.djll1 span{
+	font-size: 15px;
+}
+.cpanel .djlic_box .djlic_line.djll2 span{
+	font-size: 14px;
+}
+.cpanel .djlic_box .djlic_line.djll3 span{
+	font-size: 15px;
+}
+.cpanel .djlic_box .djlic_invalid{
+	margin-top:20px;	
+	padding:20px;
+}
+.cpanel .djlic_box .djlic_invalid a{
+	background: #fdebe7;
+	border: 1px solid #f09f8d;
+	border-radius: 0px;
+	padding: 25px 10px 10px 10px;
+	color:#e8370f;
+	text-align: center;
+	display: block;
+	position: relative;
+}
+.cpanel .djlic_box .djlic_valid a:hover,
+.cpanel .djlic_box .djlic_invalid a:hover{
+	text-decoration: none !important;
+}
+.cpanel .djlic_box .djlic_invalid .djlic_iline1{
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+.cpanel .djlic_box .djlic_invalid .djlic_iline2{
+	font-size: 14px;
+	color:#ed1c24;
+	margin: 6px 10px;
+	display:block;	
+	font-weight: normal;
+}
+.cpanel .djlic_box .djlic_invalid .djlic_iline3{
+	font-size: 9px;
+	text-transform: uppercase;
+}
+.cpanel .djlic_box .djlic_invalid .djlic_icon{
+	position: absolute;
+	width:22px;
+	height:22px;
+	background: url(../images/lic_icon_invalid.gif) top left no-repeat;
+	top:-10px;
+	left :119px;
+}
+.cpanel .djlic_box .djlic_valid{
+	margin-top:0px;	
+	padding:20px;
+}
+.cpanel .djlic_box .djlic_valid a{
+	background: #c8efbb;
+	border: 1px solid #93c183;
+	padding: 25px 10px 10px 10px;
+	color:#73b172;
+	text-align: center;
+	display: block;
+	position: relative;
+}
+.cpanel .djlic_box .djlic_valid .djlic_vline1{
+	font-size: 14px;
+	text-transform: uppercase;
+	display: block;
+	font-weight: normal;
+}
+.cpanel .djlic_box .djlic_valid .djlic_vline2{
+	text-transform: uppercase;
+	margin-top: 3px;
+	font-size: 10px;
+	display: block;
+}
+.cpanel .djlic_box .djlic_valid .djlic_icon{
+	position: absolute;
+	width:22px;
+	height:22px;
+	background: url(../images/lic_icon_valid.gif) top left no-repeat;
+	top:-10px;
+	left :119px;
+}
+
+
+.chzn-container {
+	min-width: 220px;
+}
+
+.ordertable {
+	width: 100%;
+	max-width: 900px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.ordertable td,
+.ordertable th {
+	padding: 8px;
+}
+
+.ordertable tbody td {
+	border: none;
+	background: #f1f1f1;
+	border-top: 1px solid #dadada;
+}
+
+.ordertable span.button {
+	display: inline-block;
+	border: 1px solid #cccccc;
+	padding: 0 6px;
+	cursor: pointer;
+	background: #ffffff;
+}
