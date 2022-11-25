@@ -1,5 +1,4 @@
 <div class="uk-width-3-4@m">
-<div class="uk-h5 uk-text-primary uk-hidden@l uk-margin-small uk-text-left"> <a href="/blog/dj-league">DJ-League</a> </div>
 <h1 class="dj__blogpost_headline uk-margin-remove-top uk-text-left"> DJ-League free extension updated to version 1.0.2 </h1><div class="uk-panel uk-text-muted uk-hidden@l uk-margin-remove-vertical">26 November, 2021</div><div class="uk-panel uk-dropcap uk-margin-medium"><p>
 </p><h2>One new feature</h2>
 <p>The introduced feature allows games to have fractional point values.&nbsp;</p>
