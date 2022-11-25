@@ -1,24 +1,11 @@
 <?php
 /**
- * @version $Id$
- * @package DJ-Events
- * @copyright Copyright (C) 2014 DJ-Extensions.com LTD, All rights reserved.
+ * @package DJ-League
+ * @copyright Copyright (C) DJ-Extensions.com, All rights reserved.
  * @license http://www.gnu.org/licenses GNU/GPL
  * @author url: http://dj-extensions.com
  * @author email contact@dj-extensions.com
- *
- * DJ-Events is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * DJ-Events is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with DJ-Events. If not, see <http://www.gnu.org/licenses/>.
+ * @developer Szymon Woronowski - szymon.woronowski@design-joomla.eu
  *
  */
 
@@ -54,7 +41,7 @@ defined('_JEXEC') or die('Restricted access');
 						</div>
 						<div class="icon">
 							<a href="index.php?option=com_djleague&amp;view=leagues">
-								<img alt="<?php echo JText::_('COM_DJLEAGUE_LEAGUES'); ?>" src="<?php echo JURI::base(); ?>components/com_djleague/assets/images/icon-48-seasons.png" />
+								<img alt="<?php echo JText::_('COM_DJLEAGUE_LEAGUES'); ?>" src="<?php echo JURI::base(); ?>components/com_djleague/assets/images/icon-48-leagues.png" />
 								<span><?php echo JText::_('COM_DJLEAGUE_LEAGUES'); ?></span>
 							</a>
 						</div>

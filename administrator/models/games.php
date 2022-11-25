@@ -1,24 +1,11 @@
 <?php
 /**
- * @version $Id$
- * @package DJ-Events
- * @copyright Copyright (C) 2014 DJ-Extensions.com LTD, All rights reserved.
+ * @package DJ-League
+ * @copyright Copyright (C) DJ-Extensions.com, All rights reserved.
  * @license http://www.gnu.org/licenses GNU/GPL
  * @author url: http://dj-extensions.com
  * @author email contact@dj-extensions.com
- *
- * DJ-Events is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * DJ-Events is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with DJ-Events. If not, see <http://www.gnu.org/licenses/>.
+ * @developer Szymon Woronowski - szymon.woronowski@design-joomla.eu
  *
  */
 
@@ -190,28 +177,31 @@ class DJLeagueModelGames extends JModelList
 
 	protected function validateDate($date)
 	{
+	    if (!$date) return false;
 		$d = DateTime::createFromFormat('Y-m-d', $date);
 		$d2 = DateTime::createFromFormat('Y-m-d H:i', $date);
 		return $d || $d2 ? true : false;
 	}
 
 	public function getTournaments() {
-		
-		$this->_db->setQuery('SELECT id as value, name as text FROM #__djl_tournaments ORDER BY name ASC');
-		$tournaments = $this->_db->loadObjectList();
+		$db = $this->getDatabase();
+		$db->setQuery('SELECT id as value, name as text FROM #__djl_tournaments ORDER BY name ASC');
+		$tournaments = $db->loadObjectList();
 		
 		return $tournaments;
 	}
 	
-	public function getSeasons() {		
-		
-		$this->_db->setQuery('SELECT id as value, name as text FROM #__djl_seasons ORDER BY name DESC');
-		$seasons = $this->_db->loadObjectList();
+	public function getSeasons() {
+		$db = $this->getDatabase();
+
+		$db->setQuery('SELECT id as value, name as text FROM #__djl_seasons ORDER BY name DESC');
+		$seasons = $db->loadObjectList();
 		
 		return $seasons;
 	}
 	
 	public function getLeague() {
+		$db = $this->getDatabase();
 		
 		$tournament_id = (int)$this->getState('filter.tournament');
 		$season_id = (int)$this->getState('filter.season');
@@ -219,9 +209,9 @@ class DJLeagueModelGames extends JModelList
 		$league = null;
 		
 		if($tournament_id && $season_id) {
-			
-			$this->_db->setQuery('SELECT * FROM #__djl_leagues WHERE tournament_id='.$tournament_id.' AND season_id='.$season_id.' LIMIT 1');
-			$league = $this->_db->loadObject();
+
+			$db->setQuery('SELECT * FROM #__djl_leagues WHERE tournament_id='.$tournament_id.' AND season_id='.$season_id.' LIMIT 1');
+			$league = $db->loadObject();
 			if($league) {
 				$league->params = new JRegistry($league->params);
 			}

@@ -1,30 +1,17 @@
 <?php
 /**
- * @version $Id$
- * @package DJ-Events
- * @copyright Copyright (C) 2014 DJ-Extensions.com LTD, All rights reserved.
+ * @package DJ-League
+ * @copyright Copyright (C) DJ-Extensions.com, All rights reserved.
  * @license http://www.gnu.org/licenses GNU/GPL
  * @author url: http://dj-extensions.com
  * @author email contact@dj-extensions.com
- *
- * DJ-Events is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * DJ-Events is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with DJ-Events. If not, see <http://www.gnu.org/licenses/>.
+ * @developer Szymon Woronowski - szymon.woronowski@design-joomla.eu
  *
  */
 
 defined('_JEXEC') or die('Restricted access');
 
-JHtml::_('behavior.tooltip');
+JHtml::_('bootstrap.tooltip');
 
 $user		= JFactory::getUser();
 $userId		= $user->get('id');
@@ -47,7 +34,7 @@ $listDirn	= $this->state->get('list.direction');
 			</div>
 			<div class="btn-group pull-left">
 				<button type="submit" class="btn"><?php echo JText::_('JSEARCH_FILTER_SUBMIT'); ?></button>
-				<button type="button" class="btn" onclick="document.id('filter_search').value='';this.form.submit();"><?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?></button>
+				<button type="button" class="btn" onclick="document.getElementById('filter_search').value='';this.form.submit();"><?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?></button>
 			</div>
 			<div class="btn-group pull-right hidden-phone">
 				<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>

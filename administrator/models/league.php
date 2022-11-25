@@ -1,24 +1,11 @@
 <?php
 /**
- * @version $Id$
- * @package DJ-Events
- * @copyright Copyright (C) 2014 DJ-Extensions.com LTD, All rights reserved.
+ * @package DJ-League
+ * @copyright Copyright (C) DJ-Extensions.com, All rights reserved.
  * @license http://www.gnu.org/licenses GNU/GPL
  * @author url: http://dj-extensions.com
  * @author email contact@dj-extensions.com
- *
- * DJ-Events is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * DJ-Events is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with DJ-Events. If not, see <http://www.gnu.org/licenses/>.
+ * @developer Szymon Woronowski - szymon.woronowski@design-joomla.eu
  *
  */
 
@@ -84,6 +71,7 @@ class DJLeagueModelLeague extends DJLeagueModelAdmin
 	public function save($data){
 		
 		$app = JFactory::getApplication();
+		$db = $this->getDatabase();
 		
 		if(is_array($data['params']['teams'])) {
 			$data['params']['teams'] = implode(',', $data['params']['teams']);
@@ -110,21 +98,21 @@ class DJLeagueModelLeague extends DJLeagueModelAdmin
 		if($saved && $generate_games) {
 			
 			$league_id = (int) $this->getState($this->getName().'.id');
-			
+
 			// first remove score tables for this league
 			$query = 'DELETE FROM #__djl_tables WHERE league_id='.$league_id;
-			$this->_db->setQuery($query);
-			$this->_db->query();
+			$db->setQuery($query);
+			$db->execute();
 			
 			// first remove all games for this league
 			$query = 'DELETE FROM #__djl_games WHERE league_id='.$league_id;
-			$this->_db->setQuery($query);
-			$this->_db->query();
+			$db->setQuery($query);
+			$db->execute();
 			
 			// get the teams list
 			$query = 'SELECT * FROM #__djl_teams WHERE id IN ('.$data['params']['teams'].')';
-			$this->_db->setQuery($query);
-			$teams = $this->_db->loadObjectList();
+			$db->setQuery($query);
+			$teams = $db->loadObjectList();
 			
 			// generate league score table
 			$table 	= $this->getTable('Tables');
@@ -144,6 +132,7 @@ class DJLeagueModelLeague extends DJLeagueModelAdmin
 			// generate league games
 			$game 	= $this->getTable('Games');
 			$game->league_id = $league_id;
+			$game->score_desc = '';
 			
 			$sample_data = false;
 			
@@ -243,7 +232,7 @@ class DJLeagueModelLeague extends DJLeagueModelAdmin
 	}
 	
 	public function delete(&$cid) {
-		
+		$db = $this->getDatabase();
 		$removed = false;
 		
 		if (count( $cid ))
@@ -255,13 +244,13 @@ class DJLeagueModelLeague extends DJLeagueModelAdmin
 			if($removed) {
 				// remove score tables for this league
 				$query = 'DELETE FROM #__djl_tables WHERE league_id IN ('.$cids.')';
-				$this->_db->setQuery($query);
-				$this->_db->query();
+				$db->setQuery($query);
+				$db->execute();
 					
 				// remove all games for this league
 				$query = 'DELETE FROM #__djl_games WHERE league_id IN ('.$cids.')';
-				$this->_db->setQuery($query);
-				$this->_db->query();
+				$db->setQuery($query);
+				$db->execute();
 			}
 		}
 		

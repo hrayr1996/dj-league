@@ -1,25 +1,11 @@
 <?php
 /**
- * @version $Id$
- * @package DJ-Catalog2
- * @copyright Copyright (C) 2012 DJ-Extensions.com LTD, All rights reserved.
+ * @package DJ-League
+ * @copyright Copyright (C) DJ-Extensions.com, All rights reserved.
  * @license http://www.gnu.org/licenses GNU/GPL
  * @author url: http://dj-extensions.com
  * @author email contact@dj-extensions.com
- * @developer Michal Olczyk - michal.olczyk@design-joomla.eu
- *
- * DJ-Catalog2 is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * DJ-Catalog2 is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with DJ-Catalog2. If not, see <http://www.gnu.org/licenses/>.
+ * @developer Szymon Woronowski - szymon.woronowski@design-joomla.eu
  *
  */
 
@@ -28,7 +14,7 @@ defined ('_JEXEC') or die('Restricted access');
 $app = JFactory::getApplication();
 
 $columns = $this->params->get('table_cols', array('played', 'score_diff', 'points'));
-
+$point_type = $this->league->params->get('point_type', 'int');
 ?>
 <?php if ($this->params->get( 'show_page_heading', 1)) : ?>
 <h1 class="componentheading<?php echo $this->params->get( 'pageclass_sfx' ) ?>"><?php 
@@ -83,7 +69,9 @@ $columns = $this->params->get('table_cols', array('played', 'score_diff', 'point
 						<?php if($col == 'score_diff') {
 							$sd = (int) $item->score_diff;
 							$item->score_diff = ($sd > 0 ? '+':'').$sd;
-						} ?>
+						} else if ($col == 'points') {
+							$item->points = ($point_type == 'int') ? (int)$item->points :  floatval($item->points);
+						}?>
 						<?php echo $this->escape($item->$col); ?>
 					</td>
 				<?php } ?>

@@ -35,9 +35,9 @@
 			<option value="2">COM_DJLEAGUE_TEAM_AWAY</option>
 		</field>
 		
-		<field name="points_home" type="text" label="COM_DJLEAGUE_POINTS_HOME" class="input-mini" filter="intval" />
+		<field name="points_home" type="number" label="COM_DJLEAGUE_POINTS_HOME" class="input-mini" filter="floatval" />
 		
-		<field name="points_away" type="text" label="COM_DJLEAGUE_POINTS_AWAY" class="input-mini" filter="intval" />
+		<field name="points_away" type="number" label="COM_DJLEAGUE_POINTS_AWAY" class="input-mini" filter="floatval" />
 		
 		<field name="status" type="list" label="COM_DJLEAGUE_STATUS" default="-1">
 			<option value="-1">COM_DJLEAGUE_STATUS_SETUP_NEEDED</option>

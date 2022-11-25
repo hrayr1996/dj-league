@@ -1,24 +1,11 @@
 <?php
 /**
- * @version $Id$
- * @package DJ-Events
- * @copyright Copyright (C) 2014 DJ-Extensions.com LTD, All rights reserved.
+ * @package DJ-League
+ * @copyright Copyright (C) DJ-Extensions.com, All rights reserved.
  * @license http://www.gnu.org/licenses GNU/GPL
  * @author url: http://dj-extensions.com
  * @author email contact@dj-extensions.com
- *
- * DJ-Events is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * DJ-Events is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with DJ-Events. If not, see <http://www.gnu.org/licenses/>.
+ * @developer Szymon Woronowski - szymon.woronowski@design-joomla.eu
  *
  */
 
@@ -84,6 +71,24 @@ class DJLeagueModelGame extends DJLeagueModelAdmin
 				$table->status = 0;
 			}
 		}
+		
+		if($table->status == 1 && $table->points_home=='' && $table->points_away=='' ) { // played
+			$league = $this->getLeague($table->league_id);
+			switch($table->winner) {
+				case 1:
+					$table->points_home = $league->params->get('win');
+					$table->points_away = $league->params->get('lose');
+					break;
+				case 2:
+					$table->points_home = $league->params->get('lose');
+					$table->points_away = $league->params->get('win');
+					break;
+				default:
+					$table->points_home = $league->params->get('tie');
+					$table->points_away = $league->params->get('tie');
+					break;
+			}
+		}
 	}
 	
 	public function delete(&$cid) {
@@ -102,14 +107,18 @@ class DJLeagueModelGame extends DJLeagueModelAdmin
 		return parent::delete($cid);
 	}
 	
-	public function getLeague() {
+	public function getLeague($league_id = null) {
+		$db = $this->getDatabase();
 		
-		$item = $this->getItem();
+		if(!$league_id) {
+			$item = $this->getItem();
+			$league_id = $item ? $item->league_id : 0;
+		}
 		
-		if($item && $item->league_id > 0) {
-			
-			$this->_db->setQuery('SELECT * FROM #__djl_leagues WHERE id='.$item->league_id);
-			$league = $this->_db->loadObject();
+		if($league_id > 0) {
+
+			$db->setQuery('SELECT * FROM #__djl_leagues WHERE id='.$league_id);
+			$league = $db->loadObject();
 			
 			if($league) {
 				$league->params = new JRegistry($league->params);

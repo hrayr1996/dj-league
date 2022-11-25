@@ -33,9 +33,14 @@
 				<option value="6">COM_DJLEAGUE_ROUND_ROBIN_6</option>
 			</field>
 			
-			<field name="win" type="text" label="COM_DJLEAGUE_WIN_POINTS" default="3" required="true" />
-			<field name="lose" type="text" label="COM_DJLEAGUE_LOSE_POINTS" default="0" required="true" />
-			<field name="tie" type="text" label="COM_DJLEAGUE_TIE_POINTS" default="1" required="true" />
+			<field name="point_type" type="radio" default="int" class="btn-group" label="COM_DJLEAGUE_POINT_TYPE">
+				<option value="int">COM_DJLEAGUE_POINT_TYPE_INT</option>
+				<option value="dec">COM_DJLEAGUE_POINT_TYPE_DEC</option>
+			</field>
+			
+			<field name="win" type="number" label="COM_DJLEAGUE_WIN_POINTS" default="3" required="true" />
+			<field name="lose" type="number" label="COM_DJLEAGUE_LOSE_POINTS" default="0" required="true" />
+			<field name="tie" type="number" label="COM_DJLEAGUE_TIE_POINTS" default="1" required="true" />
 			
 		</fieldset>
 	</fields>

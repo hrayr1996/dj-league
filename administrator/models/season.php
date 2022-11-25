@@ -1,24 +1,11 @@
 <?php
 /**
- * @version $Id$
- * @package DJ-Events
- * @copyright Copyright (C) 2014 DJ-Extensions.com LTD, All rights reserved.
+ * @package DJ-League
+ * @copyright Copyright (C) DJ-Extensions.com, All rights reserved.
  * @license http://www.gnu.org/licenses GNU/GPL
  * @author url: http://dj-extensions.com
  * @author email contact@dj-extensions.com
- *
- * DJ-Events is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * DJ-Events is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with DJ-Events. If not, see <http://www.gnu.org/licenses/>.
+ * @developer Szymon Woronowski - szymon.woronowski@design-joomla.eu
  *
  */
 
@@ -71,10 +58,10 @@ class DJLeagueModelSeason extends DJLeagueModelAdmin
 		$user = JFactory::getUser();
 
 		$table->name		= htmlspecialchars_decode($table->name, ENT_QUOTES);
-		$table->alias		= JApplication::stringURLSafe($table->alias);
+		$table->alias		= JApplicationHelper::stringURLSafe($table->alias);
 		
 		if (empty($table->alias)) {
-			$table->alias = JApplication::stringURLSafe($table->name);
+			$table->alias = JApplicationHelper::stringURLSafe($table->name);
 		}
 	}
 
@@ -94,15 +81,15 @@ class DJLeagueModelSeason extends DJLeagueModelAdmin
 	}
 	
 	public function delete(&$cid) {
-		
+		$db = $this->getDatabase();
 		if (count( $cid ))
 		{
 			$cids = implode(',', $cid);
 			
 			$query = 'SELECT COUNT(*) FROM #__djl_leagues WHERE season_id IN ('.$cids.')';
-			$this->_db->setQuery($query);
+			$db->setQuery($query);
 			
-			if ($this->_db->loadResult() > 0) {
+			if ($db->loadResult() > 0) {
 				$this->setError(JText::_('COM_DJLEAGUE_ERROR_SEASON_NOT_EMPTY'));
 				return false;
 			}

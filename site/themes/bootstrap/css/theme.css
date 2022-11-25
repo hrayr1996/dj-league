@@ -294,39 +294,52 @@
 
 /* RESPONSIVE STYLES */
 @media ( max-width : 979px) {
-	.djl_theme_bootstrap.djl_schedule table td {
+	.djl_theme_bootstrap.djl_schedule table td,
+	.djl_theme_bootstrap.mod_djl_schedule table td {
 		font-size: 12px;
 		line-height: 24px;
 	}
-	.djl_theme_bootstrap.djl_schedule table td img.team_logo {
+	.djl_theme_bootstrap.djl_schedule table td img.team_logo,
+	.djl_theme_bootstrap.mod_djl_schedule table td img.team_logo {
 		max-width: 24px;
 		max-height: 24px;
 	}
 }
 
 @media ( min-width : 768px) {
-	.djl_theme_bootstrap.djl_schedule table tr.mobile_info {
+	.djl_theme_bootstrap.djl_schedule table tr.mobile_info,
+	.djl_theme_bootstrap.mod_djl_schedule table tr.mobile_info {
 		display: none !important;
 	}
-	.djl_theme_bootstrap.djl_tables table .short_title {
+	.djl_theme_bootstrap.djl_tables table .short_title,
+	.djl_theme_bootstrap.mod_djl_tables table .short_title {
 		display: none;
 	}
 }
 
 @media ( max-width : 767px) {
-	.djl_theme_bootstrap.djl_schedule table tr.mobile_info td.time {
+	.djl_theme_bootstrap.djl_schedule table tr.mobile_info td.time,
+	.djl_theme_bootstrap.mod_djl_schedule table tr.mobile_info td.time {
 		text-align: right;
 	}
-	.djl_theme_bootstrap.djl_tables table .long_title {
+
+	.djl_theme_bootstrap.djl_schedule table tr.mobile_info td.time,
+	.djl_theme_bootstrap.mod_djl_schedule table tr.mobile_info td.time {
+		text-align: right;
+	}
+	.djl_theme_bootstrap.djl_tables table .long_title,
+	.djl_theme_bootstrap.mod_djl_tables table .long_title {
 		display: none;
 	}
 }
 
 @media ( max-width : 480px) {
-	.djl_theme_bootstrap.djl_schedule table td img.team_logo {
+	.djl_theme_bootstrap.djl_schedule table td img.team_logo,
+	.djl_theme_bootstrap.mod_djl_schedule table td img.team_logo {
 		display: none;
 	}
-	.djl_theme_bootstrap.djl_tables table td .team_logo {
+	.djl_theme_bootstrap.djl_tables table td .team_logo,
+	.djl_theme_bootstrap.mod_djl_tables table td .team_logo {
 		display: none;
 	}
 	.djl_theme_bootstrap.djl_tables table th.won_th,
@@ -338,7 +351,17 @@
 	.djl_theme_bootstrap.djl_tables table td.drawn,
 	.djl_theme_bootstrap.djl_tables table td.lost,
 	.djl_theme_bootstrap.djl_tables table td.score_for,
-	.djl_theme_bootstrap.djl_tables table td.score_against {
+	.djl_theme_bootstrap.djl_tables table td.score_against,
+	.djl_theme_bootstrap.mod_djl_tables table th.won_th,
+	.djl_theme_bootstrap.mod_djl_tables table th.drawn_th,
+	.djl_theme_bootstrap.mod_djl_tables table th.lost_th,
+	.djl_theme_bootstrap.mod_djl_tables table th.score_for_th,
+	.djl_theme_bootstrap.mod_djl_tables table th.score_against_th,
+	.djl_theme_bootstrap.mod_djl_tables table td.won,
+	.djl_theme_bootstrap.mod_djl_tables table td.drawn,
+	.djl_theme_bootstrap.mod_djl_tables table td.lost,
+	.djl_theme_bootstrap.mod_djl_tables table td.score_for,
+	.djl_theme_bootstrap.mod_djl_tables table td.score_against {
 		display: none;
 	}
 }
